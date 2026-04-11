@@ -109,7 +109,7 @@ export default function HowItWorks() {
                                 {/* Step Number & Node */}
                                 <div className="relative mb-8 pt-6 lg:pt-0">
                                     <div className={`w-20 h-20 rounded-2xl flex items-center justify-center ${step.bg} ${step.border} border border-opacity-50 backdrop-blur-xl relative z-10 transition-transform duration-300 group-hover:-translate-y-2 group-hover:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.5)] bg-gradient-to-br transition-all`}>
-                                        <div className={`text-transparent bg-clip-text bg-gradient-to-br ${step.color}`}>
+                                        <div className={`text-white`}>
                                             {step.icon}
                                         </div>
                                     </div>
