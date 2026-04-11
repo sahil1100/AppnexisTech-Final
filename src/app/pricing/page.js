@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Pricing from "@/components/Pricing";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function PricingPage() {
   return (
@@ -10,7 +11,7 @@ export default function PricingPage() {
         <Pricing />
       </div>
       <Contact />
-      {/* Add Footer here if you have one */}
+      <Footer />
     </main>
   );
 }
