@@ -13,11 +13,11 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 const techData = {
   "Mobile App Development": [
+    { name: "React Native", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: "Flutter", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
     { name: "Swift (iOS)", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" },
     { name: "Kotlin (Android)", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" },
     { name: "Java (Android)", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-    { name: "React Native", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-    { name: "Flutter", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
     { name: "Ionic", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg" },
   ],
   "Frontend Technology": [
@@ -30,18 +30,18 @@ const techData = {
   ],
   "Backend Technology": [
     { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+    { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
     { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
     { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-    { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
     { name: "Go", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" },
     { name: "Ruby", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg" },
   ],
   "Database & Storage": [
+    { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
     { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
     { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-    { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-    { name: "Redis", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
     { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
+    { name: "Redis", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
     { name: "Supabase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" },
   ],
   "Cloud & DevOps": [
@@ -82,114 +82,116 @@ export default function TechStack() {
   };
 
   return (
-    <section className="py-24 md:py-32 px-5 bg-[#020617] font-sans text-white overflow-hidden relative" id="tech-stack">
+    <section className="py-16 px-5 bg-slate-50 dark:bg-[#020617] font-sans text-slate-900 dark:text-white overflow-hidden relative transition-colors duration-500 scroll-mt-16" id="tech-stack">
       {/* Background elements */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none opacity-20">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none opacity-0 dark:opacity-20 transition-opacity duration-500">
           <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-500/10 blur-[120px] rounded-full"></div>
           <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-indigo-500/10 blur-[120px] rounded-full"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 blur-[150px] rounded-full"></div>
       </div>
 
-      <div className="max-w-[1300px] mx-auto relative z-10">
+      <div className="max-w-[1200px] mx-auto relative z-10">
         
         {/* Header */}
-        <motion.div {...fadeIn} className="text-center mb-16 md:mb-20">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-400">
-                <MemoryIcon sx={{ fontSize: 16 }} /> Technology Stack
+        <motion.div {...fadeIn} className="text-center mb-12 md:mb-16">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 mb-5 text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase bg-cyan-500/10 border border-cyan-500/20 rounded-full text-cyan-600 dark:text-cyan-400 backdrop-blur-sm transition-colors duration-500">
+                <MemoryIcon sx={{ fontSize: 14 }} /> Technology Stack
             </span>
-            <h2 className="text-[clamp(1.8rem,5vw,3.5rem)] font-black tracking-tight mb-6 leading-tight">
+            <h2 className="text-[clamp(1.6rem,4vw,2.8rem)] font-black tracking-tight mb-5 leading-[1.05] text-slate-900 dark:text-white transition-colors duration-500">
                 Advanced Tech Solutions Enabling <br className="hidden md:block"/>
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Digital Growth for Businesses</span>
+                <span className="bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-400 dark:to-blue-500 bg-clip-text text-transparent">Digital Growth for Businesses</span>
             </h2>
-            <p className="text-slate-400 text-sm md:text-base font-medium max-w-[800px] mx-auto leading-relaxed">
+            <p className="text-slate-500 dark:text-slate-400 text-xs md:text-sm font-medium max-w-[700px] mx-auto leading-normal transition-colors duration-500">
               By combining innovation, strategy, and modern technologies, we help businesses improve efficiency, scale faster, and achieve sustainable growth.
             </p>
         </motion.div>
 
-        {/* Main Interface */}
-        <motion.div {...fadeIn} className="flex flex-col-reverse lg:flex-row bg-[#0f172a]/60 backdrop-blur-2xl border border-white/5 rounded-[40px] overflow-hidden shadow-2xl ring-1 ring-white/10">
-          
-          {/* Left Panel: Tech Grid */}
-          <div className="flex-1 p-8 md:p-12 border-t lg:border-t-0 lg:border-r border-white/5">
-            <div className="mb-8">
-              <h3 className="text-xs font-black tracking-[0.2em] text-slate-500 uppercase mb-2">Featured Technologies</h3>
-              <p className="text-xl font-bold text-white capitalize">{activeTab}</p>
-            </div>
-
-            <div className="min-h-[400px] lg:min-h-[450px]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeTab}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 20 }}
-                  transition={{ duration: 0.3 }}
-                  className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"
-                >
-                  {techData[activeTab]?.map((tech, index) => (
-                    <div 
-                      key={index} 
-                      className="group flex flex-col items-center justify-center p-6 rounded-3xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] hover:border-cyan-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_-15px_rgba(6,182,212,0.3)]"
-                    >
-                      <div className="w-16 h-16 mb-4 flex items-center justify-center p-2 rounded-2xl bg-white/5 group-hover:bg-white/10 transition-colors">
-                        {/* Using standard img for external devicons */}
-                        <img 
-                          src={tech.icon} 
-                          alt={tech.name} 
-                          className={`w-full h-full object-contain ${tech.name.includes("GitHub") || tech.name.includes("Vercel") || tech.name.includes("AWS") ? 'invert brightness-0 filter' : ''}`}
-                          style={{ filter: tech.name.includes("Next.js") || tech.name.includes("Supabase") ? "brightness(0) invert(1)" : "" }}
-                          loading="lazy"
-                        />
-                      </div>
-                      <span className="text-sm font-semibold text-slate-300 group-hover:text-cyan-400 transition-colors text-center">
-                        {tech.name}
-                      </span>
-                    </div>
-                  ))}
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </div>
-
-          {/* Right Panel: Categories */}
-          <div className="lg:w-[400px] bg-slate-900/50 p-6 md:p-8">
-            <div className="flex flex-col gap-2">
-              {categories.map((cat) => {
+        {/* Category Tabs */}
+        <motion.div 
+            {...fadeIn}
+            className="flex flex-wrap justify-center gap-2.5 md:gap-3.5 mb-12 md:mb-16 max-w-5xl mx-auto"
+        >
+            {categories.map((cat) => {
                 const isActive = activeTab === cat.id;
                 return (
-                  <button
-                    key={cat.id}
-                    onClick={() => setActiveTab(cat.id)}
-                    className={`flex items-center justify-between w-full p-4 rounded-2xl transition-all duration-300 group ${
-                      isActive 
-                        ? "bg-cyan-500/10 border border-cyan-500/20 shadow-[0_0_20px_-5px_rgba(6,182,212,0.2)]" 
-                        : "bg-transparent border border-transparent hover:bg-white/[0.03]"
-                    }`}
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className={`flex items-center justify-center w-10 h-10 rounded-xl transition-colors ${
-                        isActive ? "bg-cyan-500/20 text-cyan-400" : "bg-white/5 text-slate-400 group-hover:text-slate-300"
-                      }`}>
-                        {cat.icon}
-                      </div>
-                      <span className={`font-semibold text-sm md:text-base transition-colors ${
-                        isActive ? "text-cyan-400" : "text-slate-400 group-hover:text-slate-200"
-                      }`}>
-                        {cat.id}
-                      </span>
-                    </div>
-                    
-                    {isActive && (
-                      <motion.div layoutId="activeArrow">
-                        <ChevronRightIcon className="text-cyan-400" />
-                      </motion.div>
-                    )}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+                    <button
+                        key={cat.id}
+                        onClick={() => setActiveTab(cat.id)}
+                        className={`relative px-4 py-2.5 md:px-5 md:py-3 rounded-full text-xs md:text-[13px] font-bold transition-all duration-300 flex items-center gap-2 overflow-hidden group ${
+                            isActive 
+                                ? "text-white shadow-[0_0_30px_-5px_rgba(6,182,212,0.3)] scale-105" 
+                                : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                        }`}
+                    >
+                        {/* Background for inactive state */}
+                        <div className={`absolute inset-0 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full opacity-100 transition-all duration-300 ${isActive ? 'opacity-0' : 'group-hover:bg-slate-50 dark:group-hover:bg-white/10 group-hover:border-cyan-500/30 shadow-sm'}`}></div>
+                        
+                        {/* Background for active state */}
+                        {isActive && (
+                            <motion.div 
+                                layoutId="activeTabBg"
+                                className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 dark:from-cyan-600 dark:to-blue-600 rounded-full"
+                                initial={false}
+                                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                            />
+                        )}
+                        
+                        {/* Border glow for active state */}
+                        {isActive && (
+                            <div className="absolute inset-0 rounded-full border border-cyan-300/50"></div>
+                        )}
 
+                        <span className="relative z-10 flex items-center gap-2">
+                            <span className={`${isActive ? "text-cyan-100" : "text-slate-400 group-hover:text-cyan-500 dark:text-slate-500 dark:group-hover:text-cyan-400"} transition-colors transform scale-90`}>{cat.icon}</span>
+                            {cat.id}
+                        </span>
+                    </button>
+                )
+            })}
         </motion.div>
+
+        {/* Tech Grid */}
+        <div className="min-h-[350px] w-full max-w-4xl mx-auto relative perspective-1000">
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={activeTab}
+                    initial={{ opacity: 0, rotateX: -15, y: 30 }}
+                    animate={{ opacity: 1, rotateX: 0, y: 0 }}
+                    exit={{ opacity: 0, rotateX: 15, y: -30 }}
+                    transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+                    className="grid grid-cols-2 md:grid-cols-3 gap-3.5 md:gap-5 lg:gap-6"
+                >
+                    {techData[activeTab]?.map((tech, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.4, delay: index * 0.05 }}
+                            className="group relative flex flex-col items-center justify-center p-6 md:p-8 rounded-[28px] bg-white dark:bg-[#0c1322]/80 backdrop-blur-md border border-slate-100 dark:border-white/5 hover:border-cyan-200 dark:hover:border-cyan-500/50 transition-all duration-300 shadow-sm hover:shadow-md dark:shadow-none"
+                        >
+                            {/* Glow behind the card */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-600/5 dark:from-cyan-500/10 dark:to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[28px] blur-xl pointer-events-none"></div>
+                            
+                            {/* Inner ambient light */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[28px]"></div>
+
+                            <div className="relative z-10 w-12 h-12 md:w-14 md:h-14 mb-4 flex items-center justify-center p-2.5 rounded-xl bg-slate-50/50 dark:bg-white/5 border border-slate-100 dark:border-white/10 group-hover:bg-white dark:group-hover:bg-cyan-500/20 transition-all duration-500 group-hover:-translate-y-2 shadow-sm dark:shadow-none group-hover:shadow-md dark:group-hover:shadow-[0_15px_40px_-10px_rgba(6,182,212,0.5)]">
+                                <img 
+                                    src={tech.icon} 
+                                    alt={tech.name} 
+                                    className={`w-full h-full object-contain filter transition-all duration-500 group-hover:scale-105 group-hover:drop-shadow-[0_0_8px_rgba(6,182,212,0.3)] dark:group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] ${tech.name.includes("GitHub") || tech.name.includes("Vercel") || tech.name.includes("AWS") || tech.name.includes("Next.js") || tech.name.includes("Supabase") ? 'dark:invert dark:brightness-0' : ''}`}
+                                    loading="lazy"
+                                />
+                            </div>
+                            <span className="relative z-10 text-xs md:text-[13px] font-bold text-slate-700 dark:text-slate-300 group-hover:text-cyan-600 dark:group-hover:text-white transition-colors duration-300 text-center tracking-tight">
+                                {tech.name}
+                            </span>
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </AnimatePresence>
+        </div>
+
       </div>
     </section>
   );

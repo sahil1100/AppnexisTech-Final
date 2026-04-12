@@ -1,103 +1,136 @@
-const differentiators = [
-  "No servers. No setup.",
-  "No developer accounts needed",
-  "Zero technical knowledge required",
-  "Build + Host + Launch — all included",
-  "Simple yearly pricing. No surprises",
-];
+"use client";
+
+import { motion } from "framer-motion";
+import GroupsIcon from "@mui/icons-material/Groups";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Image from "next/image";
 
 export default function About() {
-  return (
-    <section className="py-24 px-5 bg-[#020617] font-inter text-white overflow-hidden relative" id="about">
-      {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-cyan-500/5 blur-[120px] rounded-full pointer-events-none"></div>
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none"></div>
+    const fadeIn = {
+        initial: { opacity: 0, y: 20 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true },
+        transition: { duration: 0.6 }
+    };
 
-      <div className="max-w-[1500px] mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          
-          {/* Left: Text Content */}
-          <div className="space-y-10">
-            <div>
-              <span className="text-cyan-400 text-sm font-semibold uppercase tracking-[0.2em] mb-6 block">Our Story</span>
-              <h2 className="text-[clamp(2.5rem,5vw,3.5rem)] font-extrabold tracking-tight mb-8 leading-[1.1]">
-                Launch Your App Without <span className="text-cyan-500 underline decoration-cyan-500/30 underline-offset-8">Servers, Hosting</span> or Tech Stress
-              </h2>
-              
-              <div className="space-y-8 text-lg md:text-xl text-slate-400 leading-relaxed font-medium">
-                <p>
-                  Most businesses have great ideas but get stuck before <span className="text-slate-100 font-semibold underline decoration-cyan-500 decoration-2">launch</span> — not because of lack of vision, but because of technical barriers like <span className="text-slate-100 font-semibold italic">servers, hosting</span>, and deployment.
-                </p>
-                <p>
-                  That’s exactly what we solve.
-                </p>
-                <p className="text-cyan-400 font-bold border-l-4 border-cyan-500 pl-6 py-2">
-                  "You shouldn’t need technical knowledge to launch your own app."
-                </p>
-              </div>
-            </div>
+    const differentiators = [
+        { title: "No Tech Barriers", desc: "No servers, no hosting, no technical debt.", icon: <SettingsSuggestIcon sx={{ fontSize: 20 }} /> },
+        { title: "Managed Ecosystem", desc: "We manage the entire app lifecycle.", icon: <GroupsIcon sx={{ fontSize: 20 }} /> }
+    ];
 
-            {/* Founder Touch Section */}
-            <div className="p-8 bg-white/[0.03] border border-white/5 rounded-[32px] relative overflow-hidden group hover:border-cyan-500/20 transition-all duration-500">
-               <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center relative z-10">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-2xl shadow-lg shadow-cyan-500/20 shrink-0">
-                    👤
-                  </div>
-                  <div>
-                    <h4 className="text-base font-bold text-slate-200 mb-1 tracking-tight">Built by a developer who understands real business problems</h4>
-                    <p className="text-sm text-slate-500 leading-relaxed italic">
-                      "I started this because I saw many people struggle not with building apps — but with launching them. This platform is designed to remove that barrier completely."
-                    </p>
-                  </div>
-               </div>
-            </div>
+    return (
+        <section className="py-24 px-5 bg-white dark:bg-[#020617] font-inter text-slate-900 dark:text-white overflow-hidden relative transition-colors duration-500 scroll-mt-16" id="about">
+            {/* Background elements */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-500/5 blur-[120px] rounded-full pointer-events-none opacity-40 dark:opacity-20 animate-pulse"></div>
 
-            <div className="mt-12 flex flex-col gap-8">
-              <h4 className="text-xl font-bold flex items-center gap-3">
-                🚀 Ready to launch your app without technical hassle?
-              </h4>
-              <button 
-                onClick={() => window.location.href = '#contact'}
-                className="w-fit bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-4 px-10 rounded-2xl shadow-xl shadow-cyan-600/20 transition-all duration-300 hover:-translate-y-1 active:scale-95 text-lg"
-              >
-                Start Your Project
-              </button>
-            </div>
-          </div>
+            <div className="max-w-[1200px] mx-auto relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    
+                    {/* Left: Narrative & Philosophy */}
+                    <div className="order-2 lg:order-1">
+                        <motion.div {...fadeIn}>
+                            <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6 font-bold text-cyan-600 dark:text-cyan-400 text-[10px] uppercase tracking-[0.2em]">
+                                <span className="w-1.5 h-1.5 bg-cyan-500 rounded-full animate-pulse"></span>
+                                Our Philosophy
+                            </div>
+                            <h2 className="text-[clamp(2.2rem,5vw,3.2rem)] font-black tracking-[-0.04em] leading-[1.05] mb-8">
+                                Reimagining the <br />
+                                <span className="bg-gradient-to-r from-cyan-600 to-blue-500 bg-clip-text text-transparent">Digital Horizon.</span>
+                            </h2>
+                            <div className="space-y-6 text-[15px] md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-medium transition-colors">
+                                <p>
+                                    Technical barriers should never be the bottleneck for business growth. At <span className="text-slate-900 dark:text-white font-bold">AppNexis</span>, we've dismantled the traditional development model.
+                                </p>
+                                <p>
+                                    By managing everything from architecture to delivery, we empower you to operate at the speed of your vision. No servers, no technical debt — just pure growth.
+                                </p>
+                            </div>
+                        </motion.div>
 
-          {/* Right: Difference Cards */}
-          <div className="sticky top-32">
-            <div className="bg-white/[0.02] border border-white/[0.05] rounded-[40px] p-8 md:p-12 relative overflow-hidden backdrop-blur-xl">
-               {/* Subtle inner glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/[0.05] to-transparent pointer-events-none rounded-[40px]"></div>
-              
-              <h3 className="text-2xl md:text-3xl font-bold mb-10 text-slate-50 tracking-tight">What Makes Us Different</h3>
-              
-              <ul className="space-y-8">
-                {differentiators.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-4 text-slate-300 group">
-                    <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/30 group-hover:bg-emerald-500 group-hover:border-emerald-500 transition-all shadow-[0_0_15px_rgba(16,185,129,0)] group-hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-400 group-hover:text-white transition-colors"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        {/* Feature Grid */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-12">
+                            {differentiators.map((item, idx) => (
+                                <motion.div 
+                                    key={idx}
+                                    {...fadeIn}
+                                    transition={{ delay: 0.1 * idx }}
+                                    className="p-5 bg-slate-50 dark:bg-white/[0.02] border border-slate-100 dark:border-white/5 rounded-2xl group hover:border-cyan-500/30 transition-all"
+                                >
+                                    <div className="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center mb-4 group-hover:bg-cyan-500 group-hover:text-white transition-all">
+                                        {item.icon}
+                                    </div>
+                                    <h3 className="text-[15px] font-bold mb-1 tracking-tight">{item.title}</h3>
+                                    <p className="text-[12px] text-slate-500 dark:text-slate-500 font-medium leading-normal">{item.desc}</p>
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        <motion.button 
+                            {...fadeIn}
+                            onClick={() => window.location.href = '#contact'}
+                            className="mt-10 flex items-center gap-3 px-8 py-4 bg-slate-950 dark:bg-white text-white dark:text-slate-950 rounded-2xl font-black text-xs tracking-widest uppercase hover:scale-[1.03] active:scale-[0.97] transition-all shadow-xl shadow-black/10 dark:shadow-none"
+                        >
+                            Start Your Project <ArrowForwardIcon sx={{ fontSize: 18 }} />
+                        </motion.button>
                     </div>
-                    <span className="text-lg font-bold group-hover:text-slate-100 transition-colors tracking-tight">{item}</span>
-                  </li>
-                ))}
-              </ul>
 
-              <div className="mt-12 p-8 bg-cyan-500/5 border border-cyan-500/10 rounded-3xl relative group hover:bg-cyan-500/10 transition-colors">
-                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path><path d="M12 2a10 10 0 0 1 10 10h-10V2z"></path></svg>
+                    {/* Right: Immersive Creative */}
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                        className="order-1 lg:order-2 relative"
+                    >
+                        {/* Decorative Frames */}
+                        <div className="absolute -inset-4 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 blur-3xl opacity-50"></div>
+                        
+                        <div className="relative rounded-[40px] overflow-hidden border border-slate-200 dark:border-white/10 shadow-2xl group">
+                            <Image 
+                                src="/helloworld.png" 
+                                alt="Futuristic Tech Workspace" 
+                                width={800} 
+                                height={800}
+                                priority
+                                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                                unoptimized
+                            />
+                            
+                            {/* Overlay Badge */}
+                            <div className="absolute bottom-6 left-6 p-4 md:p-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl border border-slate-100 dark:border-white/10 shadow-xl max-w-[200px] md:max-w-[260px]">
+                                <div className="flex items-center gap-3 mb-2">
+                                    <div className="w-8 h-8 rounded-full overflow-hidden bg-slate-900 dark:bg-white/5 flex items-center justify-center p-1.5 border border-slate-200 dark:border-white/10">
+                                        <Image src="/logos.PNG" alt="AppNexis" width={24} height={24} className="object-contain" />
+                                    </div>
+                                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Verified Brand</span>
+                                </div>
+                                <p className="text-[13px] font-bold text-slate-900 dark:text-white leading-snug">
+                                    "Launched 100+ digital products with zero technical stress."
+                                </p>
+                            </div>
+                        </div> 
+
+                        {/* Floating Element */}
+                        <div className="absolute -top-6 -right-6 p-5 bg-cyan-600 rounded-3xl shadow-2xl text-white hidden md:block animate-bounce-slow">
+                             <TrendingUpIcon sx={{ fontSize: 24 }} />
+                        </div>
+                    </motion.div>
+
                 </div>
-                <h4 className="text-xs font-bold text-cyan-400 uppercase tracking-[0.3em] mb-3">Our Vision</h4>
-                <p className="text-sm text-slate-400 leading-relaxed font-medium">
-                  AppNexis aims to be the standard platform where any business—technical or not—can easily launch, manage, and scale their digital future.
-                </p>
-              </div>
             </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  );
+            
+            <style jsx>{`
+                @keyframes bounce-slow {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-10px); }
+                }
+                .animate-bounce-slow {
+                    animation: bounce-slow 4s ease-in-out infinite;
+                }
+            `}</style>
+        </section>
+    );
 }

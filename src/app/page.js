@@ -6,6 +6,8 @@ import TechStack from "../components/TechStack";
 import WhyYearly from "../components/WhyYearly";
 import Comparison from "../components/Comparison";
 import HowItWorks from "../components/HowItWorks";
+import Pricing from "../components/Pricing";
+import About from "../components/About";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
@@ -14,9 +16,11 @@ export default function Home() {
     <main className="bg-white dark:bg-[#020617] min-h-screen transition-colors duration-500">
       <Navbar />
       <Hero />
+      <About />
       <Services />
-      <TechStack />
       <WhyYearly />
+      <Pricing />
+      <TechStack />
       <Comparison />
       <HowItWorks />
       <Contact />

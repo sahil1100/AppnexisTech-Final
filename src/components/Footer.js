@@ -1,82 +1,84 @@
+"use client";
+
 import Link from "next/link";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import BrandLogo from "./BrandLogo";
 
 export default function Footer() {
-  return (
-    <footer className="bg-[#020617] text-slate-400 py-16 px-5 border-t border-white/5 relative overflow-hidden">
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-cyan-500/5 blur-[120px] rounded-t-full pointer-events-none"></div>
+    return (
+        <footer className="bg-white dark:bg-[#020617] text-slate-500 dark:text-slate-400 py-12 px-5 border-t border-slate-100 dark:border-white/5 transition-colors duration-500">
+            <div className="max-w-[1200px] mx-auto">
+                <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
+                    {/* Brand & Social */}
+                    <div className="max-w-xs transition-all">
+                        <div className="mb-6 scale-110 origin-left">
+                            <BrandLogo size="footer" />
+                        </div>
+                        <p className="text-[13px] leading-relaxed font-medium mb-6 text-slate-500 dark:text-slate-400">
+                            Enterprise-grade development for visionary brands. Build, host, and launch with total technical peace of mind.
+                        </p>
+                        <div className="flex items-center gap-4">
+                            <a 
+                                href="https://www.linkedin.com/company/appnexix/?viewAsMember=true" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="w-9 h-9 rounded-lg bg-slate-50 dark:bg-white/[0.03] flex items-center justify-center hover:text-cyan-600 dark:hover:text-cyan-400 transition-all border border-slate-100 dark:border-white/5"
+                            >
+                                <LinkedInIcon sx={{ fontSize: 20 }} />
+                            </a>
+                            <a 
+                                href="https://www.instagram.com/techappnexis?igsh=MWJibDRyaDF4cGttYw%3D%3D&utm_source=qr" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="w-9 h-9 rounded-lg bg-slate-50 dark:bg-white/[0.03] flex items-center justify-center hover:text-cyan-600 dark:hover:text-cyan-400 transition-all border border-slate-100 dark:border-white/5"
+                            >
+                                <InstagramIcon sx={{ fontSize: 20 }} />
+                            </a>
+                        </div>
+                    </div>
 
-      <div className="max-w-[1200px] mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-          <div className="lg:col-span-4">
-            <div className="mb-5">
-              <BrandLogo theme="dark" size="footer" />
+                    {/* Quick Access */}
+                    <div className="grid grid-cols-2 gap-12 lg:gap-24">
+                        <div>
+                            <h4 className="text-[10px] font-black uppercase tracking-[.25em] text-slate-900 dark:text-white mb-6">Explore</h4>
+                            <ul className="space-y-3.5 text-[13px] font-bold">
+                                <li><Link href="/" className="hover:text-cyan-500 transition-colors">Home</Link></li>
+                                <li><Link href="/#services" className="hover:text-cyan-500 transition-colors">Services</Link></li>
+                                <li><Link href="/#pricing" className="hover:text-cyan-500 transition-colors">Pricing</Link></li>
+                                <li><Link href="/#about" className="hover:text-cyan-500 transition-colors">About</Link></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="text-[10px] font-black uppercase tracking-[.25em] text-slate-900 dark:text-white mb-6">Contact</h4>
+                            <ul className="space-y-3.5 text-[13px] font-bold">
+                                <li><a href="mailto:techappnexis@gmail.com" className="hover:text-cyan-500 transition-colors">Email Support</a></li>
+                                <li><a href="tel:+917842721811" className="hover:text-cyan-500 transition-colors">+91 78427 21811</a></li>
+                                <li><a href="tel:+919106633917" className="hover:text-cyan-500 transition-colors">+91 91066 33917</a></li>
+                                <li className="text-slate-400 dark:text-slate-500 font-medium">Ahmedabad, India</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {/* CTA */}
+                    <div className="shrink-0 pt-2">
+                        <a href="/#contact" className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-black uppercase tracking-widest hover:translate-y-[-2px] transition-all shadow-xl shadow-black/10 dark:shadow-none">
+                            Get Started <ArrowForwardIcon sx={{ fontSize: 16 }} />
+                        </a>
+                    </div>
+                </div>
+
+                <div className="pt-8 border-t border-slate-100 dark:border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400">
+                        &copy; {new Date().getFullYear()} AppNexis - All Rights Reserved
+                    </p>
+                    <div className="flex items-center gap-6 text-[10px] font-black uppercase tracking-widest text-slate-500">
+                        <Link href="#" className="hover:text-cyan-500">Privacy</Link>
+                        <Link href="#" className="hover:text-cyan-500">Terms</Link>
+                    </div>
+                </div>
             </div>
-            <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-6 font-medium max-w-[300px]">
-              Build, Host and Launch, all in one yearly plan. We handle the tech so you can focus on the business.
-            </p>
-            <div className="flex items-center gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 transition-colors border border-white/5 hover:border-cyan-500/30">
-                <LinkedInIcon fontSize="small" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 transition-colors border border-white/5 hover:border-cyan-500/30">
-                <InstagramIcon fontSize="small" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-cyan-500/20 hover:text-cyan-400 transition-colors border border-white/5 hover:border-cyan-500/30">
-                <TwitterIcon fontSize="small" />
-              </a>
-            </div>
-          </div>
-
-          <div className="lg:col-span-2">
-            <h4 className="text-white font-bold mb-6 tracking-wide">Company</h4>
-            <ul className="space-y-4 text-sm font-medium">
-              <li><Link href="/" className="hover:text-cyan-400 transition-colors">Home</Link></li>
-              <li><Link href="#services" className="hover:text-cyan-400 transition-colors">Services</Link></li>
-              <li><Link href="/pricing" className="hover:text-cyan-400 transition-colors">Pricing</Link></li>
-              <li><Link href="/about" className="hover:text-cyan-400 transition-colors">About</Link></li>
-              <li><Link href="#contact" className="hover:text-cyan-400 transition-colors">Contact</Link></li>
-            </ul>
-          </div>
-
-          <div className="lg:col-span-3">
-            <h4 className="text-white font-bold mb-6 tracking-wide">Managed Solutions</h4>
-            <ul className="space-y-4 text-sm font-medium">
-              <li><Link href="#" className="hover:text-cyan-400 transition-colors flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-cyan-500/50"></div>App Development</Link></li>
-              <li><Link href="#" className="hover:text-cyan-400 transition-colors flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-blue-500/50"></div>Website Development</Link></li>
-              <li><Link href="#" className="hover:text-cyan-400 transition-colors flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500/50"></div>Cloud Hosting Service</Link></li>
-              <li><Link href="#" className="hover:text-cyan-400 transition-colors flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-fuchsia-500/50"></div>App Store Publishing</Link></li>
-            </ul>
-          </div>
-
-          <div className="lg:col-span-3">
-            <h4 className="text-white font-bold mb-6 tracking-wide">Ready to Launch?</h4>
-            <ul className="space-y-4 text-sm font-medium mb-6">
-              <li className="flex items-center gap-3">
-                <span className="text-cyan-400">Location</span> Surat, Gujarat, India
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-cyan-400">Email</span> contact@appnexis.com
-              </li>
-            </ul>
-            <a href="#contact" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 text-white font-semibold hover:bg-cyan-500 hover:text-slate-900 border border-white/10 hover:border-cyan-500 transition-all group">
-              Start Project <ArrowForwardIcon fontSize="small" className="group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
-        </div>
-
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-medium text-slate-500">
-          <p>&copy; {new Date().getFullYear()} AppNexis. All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <Link href="#" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-slate-300 transition-colors">Terms of Service</Link>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
+        </footer>
+    );
 }

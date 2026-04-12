@@ -45,34 +45,34 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-24 px-5 bg-white dark:bg-[#020617] transition-colors duration-500 relative" id="services">
+    <section className="py-14 px-5 bg-white dark:bg-[#020617] transition-colors duration-500 relative scroll-mt-16" id="services">
       {/* Top Border */}
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-slate-200 dark:via-white/10 to-transparent"></div>
 
-      <div className="max-w-[1500px] mx-auto text-center mb-20">
-        <span className="inline-block text-sm font-semibold text-cyan-600 dark:text-cyan-400 uppercase tracking-[0.1em] mb-4">Our Expertise</span>
-        <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-extrabold tracking-tight mb-6 leading-[1.1] text-slate-900 dark:text-white">
+      <div className="max-w-[1200px] mx-auto text-center mb-10">
+        <span className="inline-block text-[10px] font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-[0.2em] mb-4">Our Expertise</span>
+        <h2 className="text-[clamp(1.5rem,3vw,2.2rem)] font-extrabold tracking-tight mb-4 leading-[1.05] text-slate-900 dark:text-white">
           What We <span className="bg-gradient-to-br from-cyan-600 to-emerald-500 dark:from-cyan-400 dark:to-emerald-400 bg-clip-text text-transparent">Do Best</span>
         </h2>
-        <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed max-w-[800px] mx-auto">
+        <p className="text-sm text-slate-500 dark:text-slate-400 leading-normal max-w-[650px] mx-auto font-medium">
           We combine cutting-edge technology with strategic design to build products that don't just work—they excel.
         </p>
       </div>
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-8 max-w-[1500px] mx-auto">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-5 max-w-[1200px] mx-auto">
         {services.map((service, index) => (
           <div key={index} 
-               className="group relative bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/[0.05] rounded-[32px] p-10 transition-all duration-400 hover:-translate-y-2 hover:bg-white dark:hover:bg-white/[0.04] hover:border-cyan-500/40 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col gap-6">
+               className="group relative bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/[0.05] rounded-[24px] p-6 lg:p-7 transition-all duration-400 hover:-translate-y-1.5 hover:bg-white dark:hover:bg-white/[0.04] hover:border-cyan-500/40 hover:shadow-sm dark:hover:shadow-none overflow-hidden flex flex-col gap-4">
             
-            <div className="w-16 h-16 bg-cyan-500/10 rounded-2xl flex items-center justify-center text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 transition-all duration-400 group-hover:bg-cyan-500 group-hover:text-white group-hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]">
-              {service.icon}
+            <div className="w-11 h-11 bg-cyan-500/10 rounded-lg flex items-center justify-center text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 transition-all duration-400 group-hover:bg-cyan-500 group-hover:text-white group-hover:shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+              <span className="transform scale-90">{service.icon}</span>
             </div>
             
             <div>
-              <h3 className="text-2xl font-bold mb-3 text-slate-900 dark:text-slate-50 tracking-tight group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+              <h3 className="text-[17px] font-bold mb-2 text-slate-900 dark:text-slate-50 tracking-tight group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
                 {service.title}
               </h3>
-              <p className="text-base text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+              <p className="text-[13px] text-slate-500 dark:text-slate-400 leading-normal font-medium">
                 {service.desc}
               </p>
             </div>

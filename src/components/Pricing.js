@@ -1,43 +1,51 @@
 "use client";
 import { useState } from "react";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const pricingData = {
   oneTime: [
     {
       title: "Mobile App",
-      price: "\u20B912,999",
-      period: "",
+      price: "\u20B915,999",
+      period: "Starting from",
       desc: "One-time custom mobile solution.",
       features: [
-        "Custom Design",
-        "Full Development",
+        "Custom Design & Prototyping",
+        "Full Hybrid Development",
         "App Store Submission",
-        "3 Months Support",
+        "3 Months Maintenance",
+        "API Integration"
       ],
+      popular: false
     },
     {
       title: "Web Development",
       price: "\u20B98,999",
-      period: "",
+      period: "Starting from",
       desc: "Professional web application.",
       features: [
-        "Responsive Design",
+        "Responsive Modern Design",
         "SEO Optimization",
         "CMS Integration",
-        "Performance Tuning",
+        "Speed & Performance Tuning",
+        "Admin Dashboard"
       ],
+      popular: true
     },
     {
       title: "UI/UX Design",
       price: "\u20B94,999",
-      period: "",
+      period: "Starting from",
       desc: "Intuitive user interfaces.",
       features: [
-        "User Research",
-        "Wireframing",
-        "Prototyping",
-        "Visual Design",
+        "Deep User Research",
+        "Interactive Wireframing",
+        "High-Fi Prototyping",
+        "Visual Design System",
+        "Developer Handoff"
       ],
+      popular: false
     },
   ],
   yearly: [
@@ -45,48 +53,46 @@ const pricingData = {
       title: "Basic",
       price: "\u20B915,999",
       period: "/ year",
-      desc: "Essential premium features",
+      desc: "Essential digital commerce kit",
       features: [
-        "Launch your online store in 5 minutes",
-        "Android & iOS Consumer App",
-        "Android & iOS Admin Mobile App",
-        "Android & iOS Delivery App",
-        "Admin Portal for managing products & orders",
-        "Secure payment gateway integration",
-        "Delivery staff assignment & tracking",
-        "Multi-store & branch management",
-        "Advanced analytics & sales reports",
-        "Discounts, coupons & promotions",
+        "Launch your store in 5 minutes",
+        "Android & iOS Apps",
+        "Admin Mobile App",
+        "Delivery Management App",
+        "Payment Gateway Setup",
+        "Multi-store Management"
       ],
-    },
-    {
-      title: "Pro Max",
-      price: "\u20B934,999",
-      period: "/ year",
-      desc: "Complete premium solution",
-      features: [
-        "Everything in Pro, plus:",
-        "Instagram Reels integration",
-        "AI Integration & Automation",
-        "24/7 Phone Support",
-        "Custom Branding Solutions",
-      ],
+      popular: false
     },
     {
       title: "Pro",
       price: "\u20B919,999",
       period: "/ year",
-      desc: "Advanced business tools",
+      desc: "Advanced business automation",
       features: [
-        "Annual Plan",
-        "Everything in Basic, plus:",
-        "Custom forms builder",
-        "Video support in gallery",
-        "Service booking system",
-        "Ready-to-use product images",
-        "Live delivery boy tracking for admin",
-        "Order tracking for customers",
+        "Everything in Basic",
+        "Custom CRM Builder",
+        "Service Booking System",
+        "Live Delivery Tracking",
+        "Customer Order Tracking",
+        "Dedicated Account Lead"
       ],
+      popular: true
+    },
+    {
+      title: "Pro Max",
+      price: "\u20B934,999",
+      period: "/ year",
+      desc: "Ultimate enterprise solution",
+      features: [
+        "Everything in Pro",
+        "Instagram Reels integration",
+        "AI Automation & Insights",
+        "24/7 Priority Support",
+        "Global Infrastructure",
+        "Unlimited Bandwidth"
+      ],
+      popular: false
     },
   ],
 };
@@ -94,34 +100,49 @@ const pricingData = {
 export default function Pricing() {
   const [billing, setBilling] = useState("yearly");
 
+  const handleContactClick = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section
-      className="py-24 px-5 bg-slate-50 dark:bg-[#020617] font-inter text-slate-900 dark:text-white overflow-hidden relative transition-colors duration-500"
+      className="py-24 px-5 bg-white dark:bg-[#020617] font-inter text-slate-900 dark:text-white overflow-hidden relative transition-colors duration-500 scroll-mt-16"
       id="pricing"
     >
-      <div className="max-w-[1500px] mx-auto relative z-10">
+      {/* Background Decor */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-500/5 blur-[120px] rounded-full pointer-events-none opacity-40 dark:opacity-20"></div>
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none opacity-40 dark:opacity-20"></div>
+
+      <div className="max-w-[1200px] mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-[clamp(2.5rem,5vw,3.5rem)] font-extrabold tracking-tight mb-8">
-            Explore <span className="text-cyan-500">Pricing</span> Options
+          <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6 font-bold text-cyan-600 dark:text-cyan-400 text-[10px] uppercase tracking-[0.2em]">
+            Investment Plans
+          </div>
+          <h2 className="text-[clamp(2.2rem,5vw,3.2rem)] font-black tracking-[-0.04em] leading-[1.05] mb-6">
+            Strategic <span className="bg-gradient-to-r from-cyan-600 to-blue-500 bg-clip-text text-transparent">Pricing</span> for Growth.
           </h2>
-          <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 max-w-[900px] mx-auto leading-relaxed transition-colors duration-500">
-            Our pricing is built for partnership and scalability. Choose from transparent, flexible plans designed to deliver maximum value and drive your strategic objectives forward, whether you&apos;re a scaling startup or an established market leader.
+          <p className="text-base md:text-lg text-slate-500 dark:text-slate-400 max-w-[700px] mx-auto leading-relaxed font-medium">
+            No hidden costs. No complexity. Just a transparent investment in your digital future with dedicated support included.
           </p>
         </div>
 
+        {/* Pricing Toggle */}
         <div className="flex justify-center mb-16">
-          <div className="bg-slate-200/80 dark:bg-white/[0.05] border border-slate-300 dark:border-white/10 p-1.5 rounded-full flex gap-1 transition-colors duration-500">
+          <div className="bg-slate-100 dark:bg-white/[0.03] border border-slate-200 dark:border-white/5 p-1 rounded-2xl flex gap-1 backdrop-blur-xl">
             {[
-              { key: "oneTime", label: "One Time" },
-              { key: "yearly", label: "Yearly" },
+              { key: "oneTime", label: "One Time Project" },
+              { key: "yearly", label: "Yearly Subscription" },
             ].map((option) => (
               <button
                 key={option.key}
                 onClick={() => setBilling(option.key)}
-                className={`px-8 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
+                className={`px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-500 ${
                   billing === option.key
-                    ? "bg-cyan-600 text-white shadow-lg shadow-cyan-500/30"
-                    : "text-slate-600 hover:text-slate-900 dark:text-slate-500 dark:hover:text-slate-300"
+                    ? "bg-white dark:bg-cyan-500 text-slate-900 dark:text-white shadow-xl shadow-black/5 dark:shadow-cyan-500/20"
+                    : "text-slate-500 hover:text-slate-900 dark:text-slate-500 dark:hover:text-slate-300"
                 }`}
               >
                 {option.label}
@@ -130,61 +151,67 @@ export default function Pricing() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        {/* Pricing Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {pricingData[billing].map((plan) => (
             <div
               key={plan.title}
-              className="group bg-white dark:bg-white/[0.02] border border-slate-200 dark:border-white/[0.05] rounded-[32px] p-8 transition-all duration-400 hover:-translate-y-1 hover:bg-white dark:hover:bg-white/[0.04] hover:border-cyan-500/40 dark:hover:border-indigo-500/30 hover:shadow-[0_20px_40px_-20px_rgba(14,165,233,0.18)] dark:hover:shadow-none flex flex-col h-full"
+              className={`group flex flex-col relative h-full rounded-[40px] p-8 transition-all duration-500 border ${
+                plan.popular 
+                  ? "bg-slate-50 dark:bg-white/[0.03] border-cyan-500 shadow-2xl shadow-cyan-500/10" 
+                  : "bg-white dark:bg-[#080d1e]/50 border-slate-100 dark:border-white/5 hover:border-cyan-500/30"
+              }`}
             >
-              <div className="mb-8 p-6 bg-slate-50 dark:bg-white/[0.02] rounded-2xl border border-slate-200 dark:border-white/[0.05] transition-colors duration-500">
-                <div className="flex items-baseline gap-1 mb-6">
-                  <span className="text-3xl font-bold text-slate-900 dark:text-white">{plan.price}</span>
-                  <span className="text-slate-500 text-sm font-medium">{plan.period}</span>
+              {plan.popular && (
+                <div className="absolute top-0 right-10 -translate-y-1/2 px-4 py-1.5 bg-cyan-600 text-white text-[10px] font-black uppercase tracking-widest rounded-full shadow-lg">
+                  Most Popular
                 </div>
+              )}
 
-                <h3 className="text-2xl font-bold mb-3 tracking-tight text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
-                  {plan.title}
-                </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-medium transition-colors duration-500">
-                  {plan.desc}
-                </p>
+              <div className="mb-10">
+                <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3">{plan.period}</p>
+                <div className="flex items-baseline gap-2 mb-6">
+                  <span className="text-4xl md:text-5xl font-black text-slate-950 dark:text-white tracking-tighter">
+                   {plan.price}
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{plan.title}</h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed">{plan.desc}</p>
               </div>
 
-              <ul className="space-y-5 mb-10 flex-grow px-2">
+              <div className="h-px w-full bg-slate-100 dark:bg-white/5 mb-8"></div>
+
+              <ul className="space-y-4 mb-10 flex-grow">
                 {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-4 group/item">
-                    <div className="w-5 h-5 rounded-full bg-cyan-500/15 dark:bg-cyan-500/20 flex items-center justify-center shrink-0 mt-0.5 border border-cyan-500/30 group-hover/item:bg-cyan-500 group-hover/item:border-cyan-500 transition-all">
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="text-cyan-500 dark:text-cyan-400 group-hover/item:text-white"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                    </div>
-                    <span className="text-sm text-slate-600 dark:text-slate-400 leading-snug font-medium group-hover/item:text-slate-900 dark:group-hover/item:text-slate-200 transition-colors">
+                  <li key={idx} className="flex items-start gap-4">
+                    <CheckCircleIcon sx={{ fontSize: 18, color: '#06b6d4' }} className="shrink-0 mt-0.5" />
+                    <span className="text-[13px] text-slate-600 dark:text-slate-300 font-semibold leading-relaxed tracking-tight">
                       {feature}
                     </span>
                   </li>
                 ))}
               </ul>
 
-              <button className="w-full py-4 bg-cyan-500 text-white border border-cyan-500 rounded-2xl font-bold text-sm tracking-widest uppercase hover:bg-cyan-600 hover:border-cyan-600 hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300">
-                Contact us
+              <button 
+                onClick={handleContactClick}
+                className={`w-full py-4 rounded-2xl font-black text-[11px] tracking-[0.15em] uppercase flex items-center justify-center gap-2 transition-all active:scale-[0.98] ${
+                  plan.popular 
+                    ? "bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-xl shadow-black/10" 
+                    : "bg-slate-50 dark:bg-white/5 text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10"
+                }`}
+              >
+                Get Started <ArrowForwardIcon sx={{ fontSize: 16 }} />
               </button>
             </div>
           ))}
         </div>
-      </div>
 
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none opacity-40 dark:opacity-20 transition-opacity duration-500">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-cyan-500/10 dark:bg-indigo-600/10 blur-[150px] rounded-full"></div>
+        {/* Bottom Guarantee */}
+        <div className="mt-16 text-center">
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
+                All yearly plans include basic maintenance & infrastructure management.
+            </p>
+        </div>
       </div>
     </section>
   );
