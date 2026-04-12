@@ -87,7 +87,7 @@ export default function Hero() {
           <div className="w-full max-w-[1100px] grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 py-8 px-8 bg-white dark:bg-white/2 border border-slate-200 dark:border-white/5 rounded-[32px] shadow-lg shadow-black/[0.02] dark:shadow-none backdrop-blur-2xl relative z-10"
                style={{ animation: 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both' }}>
             {[
-              { value: "5+", label: "Apps & Sites Launched" },
+              { value: "50+", label: "Apps & Sites Launched" },
               { value: "100%", label: "Managed Hosting" },
               { value: "Secure", label: "Scalable Systems" },
               { value: "Direct", label: "24/7 Support" }
