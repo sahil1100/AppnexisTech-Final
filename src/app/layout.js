@@ -61,7 +61,7 @@ export default function RootLayout({ children }) {
         <meta property="twitter:description" content="Enterprise-grade development & hosting on a fixed yearly model." />
 
         {/* Favicon */}
-        <link rel="icon" href="/IMG_9561.PNG" />
+        <link rel="icon" href="/applogo.png" />
         <meta name="theme-color" content={darkMode ? "#020617" : "#ffffff"} />
       </head>
       <body className="antialiased">
