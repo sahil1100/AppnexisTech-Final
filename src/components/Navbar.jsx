@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
 import BrandLogo from "./BrandLogo";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -9,6 +9,8 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Navbar() {
   const { darkMode, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   // Close menu on scroll or resize
   useEffect(() => {
@@ -21,6 +23,21 @@ export default function Navbar() {
     };
   }, []);
 
+  // Handle scroll to hash on mount if there's a hash in the URL
+  useEffect(() => {
+    if (location.pathname === "/" && location.hash) {
+      const targetId = location.hash.substring(1);
+      setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else if (location.pathname === "/" && !location.hash) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [location]);
+
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/#about" },
@@ -28,6 +45,32 @@ export default function Navbar() {
     { name: "Pricing", href: "/#pricing" },
     { name: "Technologies", href: "/#tech-stack" },
   ];
+
+  const handleNavClick = (e, href) => {
+    setIsMobileMenuOpen(false);
+
+    if (href === "/") {
+      if (location.pathname === "/") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      return;
+    }
+
+    if (href.startsWith("/#")) {
+      const targetId = href.replace("/#", "");
+
+      if (location.pathname === "/") {
+        // Let <Link> handle the URL change, just do the smooth scroll after a short delay
+        // to let the mobile menu start closing
+        setTimeout(() => {
+          const element = document.getElementById(targetId);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 150);
+      }
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 w-full z-[100] backdrop-blur-xl border-b border-black/5 dark:border-white/5 bg-white/70 dark:bg-[#020617]/70 transition-colors duration-500">
@@ -46,6 +89,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               to={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors tracking-tight"
             >
               {link.name}
@@ -71,6 +115,7 @@ export default function Navbar() {
           {/* Contact Button (Desktop) */}
           <Link
             to="/#contact"
+            onClick={(e) => handleNavClick(e, "/#contact")}
             className="hidden sm:block bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2.5 px-6 rounded-xl text-[13px] tracking-tight shadow-lg shadow-cyan-500/20 transition-all active:scale-95"
           >
             Contact Now
@@ -100,7 +145,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   to={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="text-lg font-bold text-slate-800 dark:text-slate-200 hover:text-cyan-500"
                 >
                   {link.name}
@@ -108,7 +153,7 @@ export default function Navbar() {
               ))}
               <Link
                 to="/#contact"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, "/#contact")}
                 className="bg-cyan-500 text-white text-center font-bold py-4 rounded-2xl text-[15px]"
               >
                 Get Started

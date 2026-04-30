@@ -86,17 +86,17 @@ export default function Comparison() {
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="bg-slate-900 dark:bg-white/[0.04] border border-slate-800 dark:border-white/10 rounded-[48px] p-8 md:p-12 transition-all relative overflow-hidden shadow-2xl shadow-cyan-500/10 group animate-pulse-subtle"
+                        className="bg-slate-900 dark:bg-white/[0.04] border border-slate-800 dark:border-white/10 rounded-[48px] p-8 md:p-12 transition-all relative shadow-2xl shadow-cyan-500/10 group animate-pulse-subtle"
                     >
                         {/* Interactive Background Glow */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                        <div className="absolute inset-0 rounded-[48px] bg-gradient-to-br from-cyan-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+                        {/* Popular Badge */}
+                        <div className="absolute top-0 right-6 md:right-10 -translate-y-1/2 px-4 py-1.5 bg-cyan-600 text-white text-[10px] font-black uppercase tracking-widest rounded-full shadow-lg z-20">
+                            Recommended Plan
+                        </div>
 
                         <div className="relative z-10">
-                            {/* Popular Badge */}
-                            <div className="absolute top-0 right-0 px-4 py-1.5 bg-cyan-500 text-white text-[10px] font-black uppercase tracking-widest rounded-full shadow-lg shadow-cyan-500/20">
-                                Recommended Plan
-                            </div>
-
                             <div className="mb-10">
                                 <h3 className="text-2xl font-black text-white flex items-center gap-3 mb-4">
                                     AppNexis Way <CheckCircleIcon className="text-cyan-500" />

@@ -1,10 +1,35 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import BrandLogo from "./BrandLogo";
 
 export default function Footer() {
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const handleNavClick = (e, href) => {
+        if (href === "/") {
+            if (location.pathname === "/") {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+            return;
+        }
+
+        if (href.startsWith("/#")) {
+            const targetId = href.replace("/#", "");
+            
+            if (location.pathname === "/") {
+                setTimeout(() => {
+                    const element = document.getElementById(targetId);
+                    if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                    }
+                }, 150);
+            }
+        }
+    };
+
     return (
         <footer className="bg-white dark:bg-[#020617] text-slate-500 dark:text-slate-400 py-12 px-5 border-t border-slate-100 dark:border-white/5 transition-colors duration-500">
             <div className="max-w-[1200px] mx-auto">
@@ -43,9 +68,9 @@ export default function Footer() {
                             <h4 className="text-[10px] font-black uppercase tracking-[.25em] text-slate-900 dark:text-white mb-6">Explore</h4>
                             <ul className="space-y-3.5 text-[13px] font-bold">
                                 <li><Link to="/" className="hover:text-cyan-500 transition-colors">Home</Link></li>
-                                <li><Link to="/#services" className="hover:text-cyan-500 transition-colors">Services</Link></li>
-                                <li><Link to="/#pricing" className="hover:text-cyan-500 transition-colors">Pricing</Link></li>
-                                <li><Link to="/#about" className="hover:text-cyan-500 transition-colors">About</Link></li>
+                                <li><Link to="/#services" onClick={(e) => handleNavClick(e, "/#services")} className="hover:text-cyan-500 transition-colors">Services</Link></li>
+                                <li><Link to="/#pricing" onClick={(e) => handleNavClick(e, "/#pricing")} className="hover:text-cyan-500 transition-colors">Pricing</Link></li>
+                                <li><Link to="/#about" onClick={(e) => handleNavClick(e, "/#about")} className="hover:text-cyan-500 transition-colors">About</Link></li>
                             </ul>
                         </div>
                         <div>
@@ -61,9 +86,9 @@ export default function Footer() {
 
                     {/* CTA */}
                     <div className="shrink-0 pt-2">
-                        <a href="/#contact" className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-black uppercase tracking-widest hover:translate-y-[-2px] transition-all shadow-xl shadow-black/10 dark:shadow-none">
+                        <Link to="/#contact" onClick={(e) => handleNavClick(e, "/#contact")} className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-black uppercase tracking-widest hover:translate-y-[-2px] transition-all shadow-xl shadow-black/10 dark:shadow-none">
                             Get Started <ArrowForwardIcon sx={{ fontSize: 16 }} />
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
