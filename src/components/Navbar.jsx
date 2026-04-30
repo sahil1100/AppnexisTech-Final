@@ -42,8 +42,10 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "About", href: "/#about" },
     { name: "Services", href: "/#services" },
+    { name: "Projects", href: "/#projects" },
     { name: "Pricing", href: "/#pricing" },
     { name: "Technologies", href: "/#tech-stack" },
+    { name: "FAQ", href: "/#faq" },
   ];
 
   const handleNavClick = (e, href) => {

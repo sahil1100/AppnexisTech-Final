@@ -69,8 +69,10 @@ export default function Footer() {
                             <ul className="space-y-3.5 text-[13px] font-bold">
                                 <li><Link to="/" className="hover:text-cyan-500 transition-colors">Home</Link></li>
                                 <li><Link to="/#services" onClick={(e) => handleNavClick(e, "/#services")} className="hover:text-cyan-500 transition-colors">Services</Link></li>
+                                <li><Link to="/#projects" onClick={(e) => handleNavClick(e, "/#projects")} className="hover:text-cyan-500 transition-colors">Projects</Link></li>
                                 <li><Link to="/#pricing" onClick={(e) => handleNavClick(e, "/#pricing")} className="hover:text-cyan-500 transition-colors">Pricing</Link></li>
                                 <li><Link to="/#about" onClick={(e) => handleNavClick(e, "/#about")} className="hover:text-cyan-500 transition-colors">About</Link></li>
+                                <li><Link to="/#faq" onClick={(e) => handleNavClick(e, "/#faq")} className="hover:text-cyan-500 transition-colors">FAQ</Link></li>
                             </ul>
                         </div>
                         <div>
