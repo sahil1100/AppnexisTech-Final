@@ -1,12 +1,9 @@
-"use client";
-
 import { motion } from "framer-motion";
 import GroupsIcon from "@mui/icons-material/Groups";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import Image from "next/image";
 
 export default function About() {
     const fadeIn = {
@@ -89,21 +86,17 @@ export default function About() {
                         <div className="absolute -inset-4 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 blur-3xl opacity-50"></div>
                         
                         <div className="relative rounded-[40px] overflow-hidden border border-slate-200 dark:border-white/10 shadow-2xl group">
-                            <Image 
+                            <img 
                                 src="/helloworld.png" 
                                 alt="Futuristic Tech Workspace" 
-                                width={800} 
-                                height={800}
-                                priority
                                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
-                                unoptimized
                             />
                             
                             {/* Overlay Badge */}
                             <div className="absolute bottom-6 left-6 p-4 md:p-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl border border-slate-100 dark:border-white/10 shadow-xl max-w-[200px] md:max-w-[260px]">
                                 <div className="flex items-center gap-3 mb-2">
                                     <div className="w-8 h-8 rounded-full overflow-hidden bg-slate-900 dark:bg-white/5 flex items-center justify-center p-1.5 border border-slate-200 dark:border-white/10">
-                                        <Image src="/logos.PNG" alt="AppNexis" width={24} height={24} className="object-contain" />
+                                        <img src="/logos.PNG" alt="AppNexis" className="w-6 h-6 object-contain" />
                                     </div>
                                     <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Verified Brand</span>
                                 </div>
@@ -122,15 +115,6 @@ export default function About() {
                 </div>
             </div>
             
-            <style jsx>{`
-                @keyframes bounce-slow {
-                    0%, 100% { transform: translateY(0); }
-                    50% { transform: translateY(-10px); }
-                }
-                .animate-bounce-slow {
-                    animation: bounce-slow 4s ease-in-out infinite;
-                }
-            `}</style>
         </section>
     );
 }

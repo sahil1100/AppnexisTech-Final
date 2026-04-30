@@ -1,7 +1,6 @@
-"use client";
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import { useTheme } from "../app/layout";
+import { Link } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 import BrandLogo from "./BrandLogo";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -35,7 +34,7 @@ export default function Navbar() {
       <div className="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
 
         {/* Logo Area */}
-        <Link href="/" className="flex items-center shrink-0 group">
+        <Link to="/" className="flex items-center shrink-0 group">
           <div className="transition-transform duration-300 group-hover:scale-[1.02] origin-left">
             <BrandLogo size="navbar" />
           </div>
@@ -46,7 +45,7 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <Link
               key={link.name}
-              href={link.href}
+              to={link.href}
               className="text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors tracking-tight"
             >
               {link.name}
@@ -71,7 +70,7 @@ export default function Navbar() {
 
           {/* Contact Button (Desktop) */}
           <Link
-            href="/#contact"
+            to="/#contact"
             className="hidden sm:block bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2.5 px-6 rounded-xl text-[13px] tracking-tight shadow-lg shadow-cyan-500/20 transition-all active:scale-95"
           >
             Contact Now
@@ -100,7 +99,7 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
-                  href={link.href}
+                  to={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-lg font-bold text-slate-800 dark:text-slate-200 hover:text-cyan-500"
                 >
@@ -108,7 +107,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <Link
-                href="/#contact"
+                to="/#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="bg-cyan-500 text-white text-center font-bold py-4 rounded-2xl text-[15px]"
               >

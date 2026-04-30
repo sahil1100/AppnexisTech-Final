@@ -1,4 +1,4 @@
-"use client";
+
 
 import VerifiedIcon from "@mui/icons-material/Verified";
 import CloudQueueIcon from "@mui/icons-material/CloudQueue";

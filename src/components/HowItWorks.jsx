@@ -1,4 +1,4 @@
-"use client";
+
 
 import { motion } from "framer-motion";
 import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";

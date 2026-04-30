@@ -1,6 +1,4 @@
-"use client";
-
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -44,10 +42,10 @@ export default function Footer() {
                         <div>
                             <h4 className="text-[10px] font-black uppercase tracking-[.25em] text-slate-900 dark:text-white mb-6">Explore</h4>
                             <ul className="space-y-3.5 text-[13px] font-bold">
-                                <li><Link href="/" className="hover:text-cyan-500 transition-colors">Home</Link></li>
-                                <li><Link href="/#services" className="hover:text-cyan-500 transition-colors">Services</Link></li>
-                                <li><Link href="/#pricing" className="hover:text-cyan-500 transition-colors">Pricing</Link></li>
-                                <li><Link href="/#about" className="hover:text-cyan-500 transition-colors">About</Link></li>
+                                <li><Link to="/" className="hover:text-cyan-500 transition-colors">Home</Link></li>
+                                <li><Link to="/#services" className="hover:text-cyan-500 transition-colors">Services</Link></li>
+                                <li><Link to="/#pricing" className="hover:text-cyan-500 transition-colors">Pricing</Link></li>
+                                <li><Link to="/#about" className="hover:text-cyan-500 transition-colors">About</Link></li>
                             </ul>
                         </div>
                         <div>
@@ -74,8 +72,8 @@ export default function Footer() {
                         &copy; {new Date().getFullYear()} AppNexis - All Rights Reserved
                     </p>
                     <div className="flex items-center gap-6 text-[10px] font-black uppercase tracking-widest text-slate-500">
-                        <Link href="#" className="hover:text-cyan-500">Privacy</Link>
-                        <Link href="#" className="hover:text-cyan-500">Terms</Link>
+                        <Link to="#" className="hover:text-cyan-500">Privacy</Link>
+                        <Link to="#" className="hover:text-cyan-500">Terms</Link>
                     </div>
                 </div>
             </div>

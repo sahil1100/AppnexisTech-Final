@@ -3,23 +3,6 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 export default function Hero() {
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes shine {
-          to { background-position: 200% center; }
-        }
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(30px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInDown {
-          from { opacity: 0; transform: translateY(-30px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes pulse-soft {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.7; }
-        }
-      `}} />
       <section className="relative min-h-[85vh] flex items-center justify-center pt-24 pb-16 px-5 text-center bg-white dark:bg-[#020617] transition-colors duration-500 overflow-hidden font-inter">
         
         {/* Background Grids & Glows */}

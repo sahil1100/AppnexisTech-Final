@@ -1,4 +1,4 @@
-"use client";
+
 import { useState } from "react";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
