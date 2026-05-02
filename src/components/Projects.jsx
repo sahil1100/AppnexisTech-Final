@@ -4,6 +4,7 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import MedicalServicesIcon from "@mui/icons-material/MedicalServices";
 import SolarPowerIcon from "@mui/icons-material/SolarPower";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 
 const projectsData = [
   {
@@ -38,11 +39,30 @@ const projectsData = [
       "24/7 Monitoring & Maintenance"
     ],
     media: [
-      { type: "video", src: "/Screencast from 30-04-26 03:07:14 PM IST.webm", alt: "SOLVIOX Video Demo" },
+      { type: "video", src: "/rec_1.mp4", alt: "SOLVIOX Video Demo" },
       { type: "image", src: "/S1.png", alt: "SOLVIOX Hero Section" },
       { type: "image", src: "/S2.png", alt: "SOLVIOX Features" }
     ],
     color: "from-amber-400 to-orange-500"
+  },
+  {
+    id: "circlebnk",
+    title: "CircleBNK",
+    subtitle: "Not a Bank. Better Than a Bank.",
+    description: "A technology-revolutionary financial bridge connecting crypto, fiat, and real-world assets. One platform offering endless possibilities with a multi-asset wallet, global payments, hybrid exchange, and AI-driven yield optimization.",
+    icon: <CurrencyExchangeIcon sx={{ fontSize: 24 }} />,
+    features: [
+      "Multi Asset Wallet (Crypto, Fiat, RWA)",
+      "Global Payments & Transfers",
+      "Instant Virtual Cards",
+      "AI Driven Yield Optimization"
+    ],
+    media: [
+      { type: "image", src: "/C3.png", alt: "CircleBNK Hero" },
+      { type: "image", src: "/C2.png", alt: "CircleBNK Interface" },
+      { type: "image", src: "/C1.png", alt: "CircleBNK Dashboard" }
+    ],
+    color: "from-blue-500 to-purple-500"
   }
 ];
 
